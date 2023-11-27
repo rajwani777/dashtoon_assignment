@@ -4,28 +4,34 @@ generative AI assignment
                                           DASHTOON campus placement assignment 
                                               Generative AI (neural style transfer)
 Without wasting much of time in reading the theory I’ll directly explain some important points of my implementation and ideas : 
-                                                          3 methods: 
+                            3 methods: 
 I tried to solve the problem in 3 different ways which include: 
 1) the traditional way of using pre trained VGG 19 model for the feature extraction
 2) the CNN based deep learning model for feature extraction from content and style images.
 3) *Combination of Style transfer + pix2pix model (GAN)
                                                          
 Notebooks:
+
 Total of 2 notebooks are attached, 
 1) notebook 1 has the implementation of 1st and 2nd method together 
 2) notebook 2 consist of my newly created approach i.e., style transfer + pix2pix model.
 
-Details of used methods: 
+Details of used methods:
+
 1) VGG19 pretrained model : 
 VGG 19 model is a large computer vision model which can be used to extract the features from the images, by removing the last layers of the network,
 It is capable of extracting low level as well as high level features of the network, as far as the networks gets deeper, we can find the high level features that’s why the content images features are taken from the last convolution layer while the style image’s features are extracted from first convolution layer of each block of network.
+
 Issue : 
+
 although this method is highly accurate and can generate the satisfying results but the issue with this method is that the pretrained model like inception net, vgg, resnet are very large in size and can consume high RAM memory, which makes  this method hard to implement on live server because it takes time to get downloaded.
 
 2) CNN based deep neural network architecture: 
 
 This time I used the autoencoder based architecture design, where I removed the decoder part and only used the encoder part to extract the features from the images, the method is still similar as of the previous approach. 
-Issues : 
+
+Issues :
+
 The issues with this method is, the accuracy is not up to the mark because we have to train the model to extract the features of images
 The plus point of this method is that we can make an optimized small sized model for the feature extraction, in this assignment the model which I designed was of almost 1.5MB, which is roughly 15 times less than the pretrained model. hence the loading time of model is almost negligible.
 
@@ -33,7 +39,9 @@ The plus point of this method is that we can make an optimized small sized model
 
 I designed this approach from my past work experience, the reason for using this combination are :
 •	we can solve some particular type of problems where the unnecessary things are not required, for example if we want to make the realistic looking water colour paintings, or want to apply only particular type of transitions to the image etc. 
+
 •	GAN based methods are more accurate and can generate realistic images.
+
 •	we can design the generator model according to our system requirement which can be more dynamic.
 
 How this works : 
