@@ -59,13 +59,15 @@ I designed this approach from my past work experience, the reason for using this
 
 •	then I used tensor hub model’s google magenta model to generate the labels for my model training (model link : https://tfhub.dev/google/magenta/arbitrary-image-stylization-v1-256/2 ) by giving it style and content images of the dataset (it took me around 10-15 sec to generate 600 images ) 
 
+• in next step i prepared the dataset in format of pix2pix GAN, i combined content and style image features by Add using layer of tensorflow keras, and we already have label for it.
+
 •	the generator is having Unet architecture which preserve a lot of image information and also minimize the chances of overfitting or vanishing gradients.
 
 •	discriminator have patch Gan based architecture which benefits in better comparison of the generated and actual image by checking patch by patch part of image.
 
 •	L1 loss and binary cross entropy loss are used, L1 is used to generate the highly realistic output images with no blur. Apart from this we can also use pre trained models like VGG 19 to extract the feature from target images and the compare it with generated images to obtain the best results.
 
-•	Finally, I trained the model for 50 epochs and I got some results, results were not up to the mark but this can be a future approach for the generation of some particular art designs. 
+•	Finally, I trained the model for 18 epochs and I got some results, results were not up to the mark due to the wide spread of dataset and no coorelation between any of the style images, hence model was not able to capture the relation between input and target images, but this can be a future approach for the generation of some particular art designs. 
 
 
 
