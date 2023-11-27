@@ -1,5 +1,5 @@
-# dashtoon_assignment
-generative AI assignment
+# dashtoon_ Neural Style Transfer 
+generative AI assignment and a new method
 
                                               DASHTOON campus placement assignment 
                                               Generative AI (neural style transfer)
