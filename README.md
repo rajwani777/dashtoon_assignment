@@ -28,7 +28,7 @@ Total of 2 notebooks are attached
 VGG 19 model is a large computer vision model which can be used to extract the features from the images, by removing the last layers of the network,
 It is capable of extracting low level as well as high level features of the network, as far as the networks gets deeper, we can find the high level features that’s why the content images features are taken from the last convolution layer while the style image’s features are extracted from first convolution layer of each block of network.
 
-    Issue : 
+    Issues : 
 
 although this method is highly accurate and can generate the satisfying results but the issue with this method is that the pretrained model like inception net, vgg, resnet are very large in size and can consume high RAM memory, which makes  this method hard to implement on live server because it takes time to get downloaded.
 
@@ -84,7 +84,7 @@ There are still several issues in this type of method due to the large size of G
 
 
 
-                                                                               Summary 
+                                                             Summary 
 all this ideas and implementations are the outputs of my past work experience in computer vision domain, in my 3 month of internship I did rigorous research work to enhance the generative image quality by removing the artifacts like JPEG Artifacts, image deblur, staircase artifacts etc. apart from these I knew how important is the model size and parameters for the memory consumption of and time processing of low end devices, hence in this assignment I put focused on designing the light weight model architecture, which I somewhat successfully completed. 
 I was able to produce the results by using the above-mentioned methods results are not state of the art but they need some optimization, all the work I have done is the output of two days, hopefully by doing a bit of more research in generator model architecture we can create a noble deep learning model.
 
